@@ -1,0 +1,64 @@
+{
+  "expo": {
+    "name": "MassIQ",
+    "slug": "massiq",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FAF6EE"
+    },
+    "scheme": "massiq",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.massiq.app",
+      "infoPlist": {
+        "NSHealthShareUsageDescription": "MassIQ reads your steps, sleep, heart rate, and body metrics to calculate your personalized fitness score.",
+        "NSHealthUpdateUsageDescription": "MassIQ writes workout and nutrition data to Apple Health.",
+        "NSMotionUsageDescription": "MassIQ uses motion sensors to track your step count accurately.",
+        "NSCameraUsageDescription": "MassIQ uses your camera to analyze your meals and body composition.",
+        "NSPhotoLibraryUsageDescription": "MassIQ accesses your photos to analyze food and body composition photos."
+      },
+      "entitlements": {
+        "com.apple.developer.healthkit": true,
+        "com.apple.developer.healthkit.background-delivery": true
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FAF6EE"
+      },
+      "package": "com.massiq.app",
+      "permissions": [
+        "android.permission.ACTIVITY_RECOGNITION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.BODY_SENSORS",
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "MassIQ accesses your photos to analyze food and body composition."
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "MassIQ uses your camera to analyze meals and body composition."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
